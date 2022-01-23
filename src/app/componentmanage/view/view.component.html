@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>View Post</h1>
+  
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-primary">Back</a>
+   
+    <div>
+        <strong>Id:</strong>
+        <p>{{ carc.id }}</p>
+    </div>
+   
+    <div>
+        <strong>Name:</strong>
+        <p>{{ carc.name }}</p>
+    </div>
+    <div>
+        <strong><p> Picture: </p> </strong>
+        <img class="picturesize" src="{{ carc.picture }}" alt="photocomposant">
+    </div>
+    <div>
+    <div>
+        <strong>Type:</strong>
+        <p>{{ carc.type }}</p>
+    </div>
+    <div>
+        <strong>Categories:</strong>
+        <p>{{ carc.categories }}</p>
+    </div>
+</div>

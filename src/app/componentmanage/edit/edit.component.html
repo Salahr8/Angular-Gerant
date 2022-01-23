@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Modifier votre Composant : </h1>
+  
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()" >
+  
+        <div class="form-group">
+            <label >Id:</label>
+            <input 
+                formControlName="id"
+                type="number" 
+                [(ngModel)]="carc.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Id is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Name:</label>
+            <input 
+                formControlName="name"
+                type="text"
+                [(ngModel)]="carc.name" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].touched && f['name'].invalid">Name is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Type:</label>
+            <input 
+                formControlName="type"
+                type="text"
+                [(ngModel)]="carc.type" 
+                class="form-control">
+            <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
+                <div *ngIf="f['type'].touched && f['type'].invalid">Type is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Categorie:</label>
+            <input 
+                formControlName="categories"
+                type="text" 
+                [(ngModel)]="carc.categories"
+                class="form-control">
+            <div *ngIf="f['categories'].touched && f['categories'].invalid" class="alert alert-danger">
+                <div *ngIf="f['categories'].touched && f['categories'].invalid"> Catégorie is required.</div>
+            </div>
+        </div>
+
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Modifier</button>
+    </form>
+</div>
