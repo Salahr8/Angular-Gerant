@@ -1,0 +1,74 @@
+<div class="container">
+    <h1>Manage Components</h1>
+  
+    <a href="#" routerLink="/componentmanage/create" class="btn btn-success">Ajouter un composant</a> &nbsp; &nbsp;
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-success" (click)="infocat=true">Rechercher des Composants </a> <br>
+ <br>
+  <div  *ngIf="infocat" class="container">
+    <h4>Selectionner le type à chercher: </h4>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+        <select name="typecmp"formControlName="type" type="text" class="form-control" >
+          <option selected>Choisir...</option>
+          <option *ngFor="let cm of Componentsdata"> {{cm.name}} </option>
+        </select>
+        <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
+            <div *ngIf="f['type'].value=='Choisir...'">Le type is required.</div>
+        </div>
+       </div>
+       <br>
+       <div class="form-group" *ngIf="f['type'].value!='Choisir...'&&f['type'].value!=''">
+        <select formControlName="soustype" type="text" class="form-control">
+          <option selected>Choisir...</option>
+          <ng-container *ngFor="let scm of SousComponentsdata">
+          <option *ngIf="this.f['type'].value==scm.type" > {{scm.name}} </option>
+          </ng-container>
+        </select>
+       </div>
+       <br>
+       <button class="btn btn-primary" type="submit" [disabled]="!form.valid||f['type'].value=='Choisir...'">Rechercher</button>
+    </form>
+    <br>
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-info" (click)="infocat=false">Retour </a>
+  </div>
+   <ng-container *ngIf="!infocat&&f['type'].value!=''&&f['type'].value!='Choisir...' "> {{ initialiser() }}  </ng-container> 
+<!--   <ng-container *ngIf="typecmp=='Choisir...'"> {{ initialiser() }}</ng-container> -->
+  <br>
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>type</th>
+        <th>picture</th>
+        <th>discount</th>
+        <th>quantity</th>
+        <th>number person rate</th>
+        <th>number rate</th>
+        <th>categorie </th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let cm of components | paginate: { itemsPerPage: 10, currentPage: p, totalItems:totalLength }">
+        <td>{{ cm.id }}</td>
+        <td>{{ cm.name }}</td>
+        <td>{{ cm.description }}</td>
+        <td>{{ cm.price }}</td>
+        <td>{{ cm.type }}</td>
+        <td><img class="imagesize" src="{{ cm.picture }}" alt=""></td>
+        <td align="center">{{ cm.discount }}</td>
+        <td align="center">{{ cm.quantity }}</td>
+        <td align="center">{{ cm.numberPersonRate }}</td>
+        <td align="center">{{ cm.numberRate }}</td>
+        <td >  <ul class="list-group"> <ng-container> <li *ngFor="let cat of cm.categories" class="list-group-item"> {{ cat.reference }} </li> </ng-container>  </ul> </td>
+
+        <td>
+          <a href="#" [routerLink]="['/componentmanage/', cm.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/componentmanage/', cm.id, 'edit']" class="btn btn-info">Edit</a>
+          <button type="button" (click)="deletePost(cm.id)" class="btn btn-info">Delete</button>
+        </td>
+      </tr>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <br>
+ </div>
