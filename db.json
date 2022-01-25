@@ -1,69 +1,58 @@
 {
   "carComponent": [
     {
-      "id": 2,
-      "name": "bougie",
-      "description": "this bougie is good for using",
-      "price": 70,
-      "type": "Bougie",
-      "picture": "https://st.depositphotos.com/1000128/3409/i/600/depositphotos_34099985-stock-photo-sparkplug.jpg",
-      "discount": 0,
-      "quantity": 40,
-      "numberPersonRate": 35,
-      "numberRate": 150,
-      "categories": "BMW"
-    },
-    {
-      "id": 3,
-      "name": "Pneus-v68",
-      "description": "this pneus is good for using",
-      "price": 20,
-      "type": "Pneus",
-      "picture": "https://img.freepik.com/photos-gratuite/roue-voiture-pneu-voiture-roues-aluminium-isoles-fond-blanc_39420-40.jpg?size=626&ext=jpg",
-      "discount": 0,
-      "quantity": 80,
-      "numberPersonRate": 35,
-      "numberRate": 150,
-      "categories": "AUDI"
-    },
-    {
       "id": 4,
-      "name": "Radiateur-v4",
-      "description": "this Radiateur is good for using",
-      "price": 30,
+      "name": "Radiateur-v6",
       "type": "Radiateur",
-      "picture": "https://previews.123rf.com/images/gdolgikh/gdolgikh1512/gdolgikh151200190/49637670-radiateur-de-voiture-isol%C3%A9-sur-fond-blanc.jpg",
-      "discount": 0,
-      "quantity": 151,
+      "picture": "https://www.cdiscount.com/pdt2/9/2/2/1/700x700/ngk3663914362922/rw/bougie-d-allumage-ngk-moto-yamaha-1000-fz1-fazer-2.jpg",
+      "description": "this Radiateur is really good for using",
+      "price": "40",
+      "categories": [
+        {
+          "id": "1",
+          "reference": "skooda"
+        }
+      ],
       "numberPersonRate": 35,
+      "discount": "1",
       "numberRate": 150,
-      "categories": "skooda"
+      "quantity": 160
     },
     {
       "id": 5,
       "name": "Engin-v4",
       "description": "this engine is good for using",
       "price": 20,
-      "type": "Engin",
+      "type": "Moteur",
       "picture": "https://images4.alphacoders.com/320/thumb-350-32038.jpg",
       "discount": 0,
       "quantity": 200,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "mercedes"
+      "categories": [
+        {
+          "id": "4",
+          "reference": "Mercedes"
+        }
+      ]
     },
     {
       "id": 6,
       "name": "bougie",
       "description": "this bougie is good for using",
       "price": 70,
-      "type": "Bougie",
+      "type": "Boujie",
       "picture": "https://st.depositphotos.com/1000128/3409/i/600/depositphotos_34099985-stock-photo-sparkplug.jpg",
       "discount": 0,
       "quantity": 40,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "BMW"
+      "categories": [
+        {
+          "id": "3",
+          "reference": "BMW"
+        }
+      ]
     },
     {
       "id": 7,
@@ -76,7 +65,12 @@
       "quantity": 80,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "AUDI"
+      "categories": [
+        {
+          "id": "3",
+          "reference": "BMW"
+        }
+      ]
     },
     {
       "id": 8,
@@ -89,33 +83,48 @@
       "quantity": 151,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "skooda"
+      "categories": [
+        {
+          "id": "3",
+          "reference": "BMW"
+        }
+      ]
     },
     {
       "id": 9,
       "name": "Engin-v4",
       "description": "this engine is good for using",
       "price": 20,
-      "type": "Engin",
+      "type": "Moteur",
       "picture": "https://images4.alphacoders.com/320/thumb-350-32038.jpg",
       "discount": 0,
       "quantity": 200,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "mercedes"
+      "categories": [
+        {
+          "id": "4",
+          "reference": "Mercedes"
+        }
+      ]
     },
     {
       "id": 10,
       "name": "bougie",
       "description": "this bougie is good for using",
       "price": 70,
-      "type": "Bougie",
+      "type": "Boujie",
       "picture": "https://st.depositphotos.com/1000128/3409/i/600/depositphotos_34099985-stock-photo-sparkplug.jpg",
       "discount": 0,
       "quantity": 40,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "BMW"
+      "categories": [
+        {
+          "id": "3",
+          "reference": "BMW"
+        }
+      ]
     },
     {
       "id": 11,
@@ -128,7 +137,12 @@
       "quantity": 80,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "AUDI"
+      "categories": [
+        {
+          "id": "2",
+          "reference": "audi"
+        }
+      ]
     },
     {
       "id": 12,
@@ -141,7 +155,12 @@
       "quantity": 151,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "skooda"
+      "categories": [
+        {
+          "id": "1",
+          "reference": "skooda"
+        }
+      ]
     },
     {
       "id": 13,
@@ -154,7 +173,12 @@
       "quantity": 200,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "mercedes"
+      "categories": [
+        {
+          "id": "4",
+          "reference": "Mercedes"
+        }
+      ]
     },
     {
       "id": 14,
@@ -167,7 +191,12 @@
       "quantity": 40,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "BMW"
+      "categories": [
+        {
+          "id": "3",
+          "reference": "BMW"
+        }
+      ]
     },
     {
       "id": 15,
@@ -180,7 +209,12 @@
       "quantity": 80,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "AUDI"
+      "categories": [
+        {
+          "id": "2",
+          "reference": "audi"
+        }
+      ]
     },
     {
       "id": 16,
@@ -193,7 +227,38 @@
       "quantity": 151,
       "numberPersonRate": 35,
       "numberRate": 150,
-      "categories": "skooda"
+      "categories": [
+        {
+          "id": "1",
+          "reference": "skooda"
+        }
+      ]
+    },
+    {
+      "id": 666,
+      "name": "Moteurv6",
+      "type": "Moteur",
+      "picture": "https://www.larousse.fr/encyclopedie/data/images/1001620-Coupe_dun_moteur_%c3%a0_explosion.jpg",
+      "description": "Description",
+      "price": "80",
+      "categories": [
+        {
+          "id": 1,
+          "reference": "skooda"
+        },
+        {
+          "id": 2,
+          "reference": "audi"
+        },
+        {
+          "id": 3,
+          "reference": "BMW"
+        }
+      ],
+      "numberPersonRate": 0,
+      "discount": 0,
+      "numberRate": 0,
+      "quantity": 90
     }
   ]
 }

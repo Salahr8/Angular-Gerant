@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentCar } from '../componentCar.model';
 import { ComponentmanageService } from '../componentmanage.service';
@@ -29,7 +29,14 @@ export class EditComponent implements OnInit {
       id: new FormControl('', Validators.required),
       name: new FormControl('', Validators.required),
       type: new FormControl('', Validators.required),
-      categories: new FormControl('', Validators.required)
+      picture: new FormControl('',Validators.required),
+      description: new FormControl('',Validators.required),
+      price: new FormControl('',Validators.required),
+      categories: new FormControl(''),
+      numberPersonRate: new FormControl(''),
+      discount: new FormControl('',Validators.required),
+      numberRate:new FormControl(''),
+      quantity: new FormControl('')
     })
   }
   get f(){

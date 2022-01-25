@@ -1,3 +1,5 @@
+import { Categorie } from "./categorie";
+
 export interface ComponentCar{
     id:number;
     name:string;
@@ -9,5 +11,5 @@ export interface ComponentCar{
     quantity:number;
     numberPersonRate:number;
     numberRate:number;
-    categories:string;
+    categories:Categorie[];
 }

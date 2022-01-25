@@ -16,6 +16,17 @@
             </div>
         </div>
         <div class="form-group">
+            <label >Image:</label>
+            <input 
+                formControlName="picture"
+                type="text"
+                class="form-control">
+            <img src="{{f['picture'].value}}" alt="imagecomp" class="picturesize"> 
+            <div *ngIf="f['picture'].touched && f['picture'].invalid" class="alert alert-danger">
+                <div *ngIf="f['picture'].touched && f['picture'].invalid">Image is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
             <label >Name:</label>
             <input 
                 formControlName="name"
@@ -36,17 +47,52 @@
             </div>
         </div>
         <div class="form-group">
-            <label >Categorie:</label>
+            <label >Discount:</label>
             <input 
-                formControlName="categories"
-                type="text" 
+                formControlName="discount"
+                type="number"
                 class="form-control">
-            <div *ngIf="f['categories'].touched && f['categories'].invalid" class="alert alert-danger">
-                <div *ngIf="f['categories'].touched && f['categories'].invalid"> Catégorie is required.</div>
+            <div *ngIf="f['discount'].touched && f['discount'].invalid" class="alert alert-danger">
+                <div *ngIf="f['discount'].touched && f['discount'].invalid">Discount is required.</div>
             </div>
         </div>
-
-  
+        <div class="form-group">
+            <label >Description:</label>
+            <input 
+                formControlName="description"
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].touched && f['description'].invalid">Description is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Price:</label>
+            <input 
+                formControlName="price"
+                type="text"
+                class="form-control">
+            <div *ngIf="f['price'].touched && f['price'].invalid" class="alert alert-danger">
+                <div *ngIf="f['price'].touched && f['price'].invalid">Price is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Quantity:</label>
+            <input 
+                formControlName="quantity"
+                type="number" 
+                class="form-control">
+            <div *ngIf="f['quantity'].touched && f['quantity'].invalid" class="alert alert-danger">
+                <div *ngIf="f['quantity'].touched && f['quantity'].invalid">Quantity is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Categories:</label>
+        
+            <select  class="form-control"  multiple data-live-search="true">
+                 <option *ngFor="let cat of categories" (click)="puton(cat.reference)" >{{cat.reference}}</option> 
+            </select>
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Ajouter</button>
     </form>
 </div>

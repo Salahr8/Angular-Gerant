@@ -39,4 +39,8 @@ export class ComponentmanageService {
     let host = environment.host;
     return this.http.delete(host + '/carComponent/' + id, this.httpOptions)
   }
+  searchbytypes(type:String):Observable<ComponentCar[]>{
+    let host = environment.host;
+    return this.http.get<ComponentCar[]>(host+"/carComponent/?type="+type); 
+  }
 }
