@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar navbar-nav">
+        <li>
+            <button (click)="onGetAllReclamation()" class="btn btn-outline-info ml-2">All</button>
+        </li>
+    </ul>
+    <ul class="navbar navbar-nav ml-auto">
+        <li>
+            <form #f = "ngForm" (ngSubmit)="onSearch(f.value)">
+                <div class="form-group">
+                    <input ngModel name="keyword" type="text">
+                    <button class="btn btn-outline-info">
+                        <span class="fa fa-search"></span>
+                    </button>
+                </div>
+            </form>
+        </li>
+    </ul>
+</nav>
+<div class="container" *ngIf="moreDetails">
+    <h1>View details</h1>
+  
+    <a href="#" (click)="moreDetails=false" class="btn btn-primary" style="margin-right: 30px;">Back</a>
+    <a href="mailto:{{detailsReclamation.commande.client.mail}}" class="btn btn-primary">send a mail to the client</a>
+    <div>
+        <strong>Id:</strong>
+        <p>{{ detailsReclamation.id }}</p>
+    </div>
+   
+    <div>
+        <strong>Id commande:</strong>
+        <p>{{ detailsReclamation.commande.id }}</p>
+    </div>
+    <div>
+        <strong>Id Client:</strong>
+        <p>{{ detailsReclamation.commande.client.id }}</p>
+    </div>
+    <div>
+        <strong>first name of the client:</strong>
+        <p>{{ detailsReclamation.commande.client.f_name }}</p>
+    </div>
+    <div>
+        <strong>last name of the client:</strong>
+        <p>{{ detailsReclamation.commande.client.l_name }}</p>
+    </div>
+    <div>
+        <strong>mail of the client:</strong>
+        <p>{{ detailsReclamation.commande.client.mail }}</p>
+    </div>
+    <div>
+        <strong>adress of the client:</strong>
+        <p>{{ detailsReclamation.commande.client.adress }}</p>
+    </div>
+    <div>
+        <strong>if of the reclamation:</strong>
+        <p>{{ detailsReclamation.commande.reclamation.id }}</p>
+    </div>
+    <div>
+        <strong>if of the reclamation:</strong>
+        <p>{{ detailsReclamation.commande.reclamation.detailsReclamation }}</p>
+    </div>
+    <div>
+        <strong><p> Picture of the component: </p> </strong>
+        <img class="picturesize" src="{{ detailsReclamation.composant.picture }}" alt="photocomposant">
+    </div>
+    <div>
+        <strong>id of the componant</strong>
+        <p>{{ detailsReclamation.composant.id }}</p>
+    </div>
+    <div>
+        <strong>name of the componant</strong>
+        <p>{{ detailsReclamation.composant.name }}</p>
+    </div>
+    <div>
+        <strong>description of the componant</strong>
+        <p>{{ detailsReclamation.composant.description }}</p>
+    </div>
+    <div>
+        <strong>categories of the componant</strong>
+        <p>{{ detailsReclamation.composant.categories }}</p>
+    </div>
+
+</div>
+<div class="container" *ngIf="reclamations && !moreDetails">
+    <table class="table">
+        <tr>
+            <td>ID</td><td>first name</td><td>reclamation</td><td>name of component</td><td>type of component</td><td>more details</td>
+        </tr>
+        <tr *ngFor="let c of reclamations">
+            <td>{{c.id}}</td><td>{{c.commande.client.f_name}}</td><td>{{c.commande.reclamation.detailsReclamation}}</td><td>{{c.composant.name}}</td><td>{{c.composant.type}}</td>
+            <td>
+                <button (click)="onSelect(c)"><i class="far fa-info-circle"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
