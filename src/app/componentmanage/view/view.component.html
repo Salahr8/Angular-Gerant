@@ -1,0 +1,34 @@
+<div style="margin-left: 50px;">
+<h1>View Post</h1>
+  
+<a href="#" routerLink="/componentmanage/index" class="btn btn-primary">Back</a>
+</div>
+<br>
+<br>
+<br>
+<div style="display: flex;">
+<div class="container" style="width: 70%; margin-left: 50px; margin-right: 0%;" >
+    <div>
+        <strong>Id:</strong>
+        <p>{{ carc.id }}</p>
+    </div>
+   
+    <div>
+        <strong>Name:</strong>
+        <p>{{ carc.name }}</p>
+    </div>
+    <div>
+        <strong><p> Picture: </p> </strong>
+        <img class="picturesize" src="{{ carc.picture }}" alt="photocomposant">
+    </div>
+    <div>
+        <strong>Type:</strong>
+        <p>{{ carc.type }}</p>
+    </div>
+</div>
+<div>
+    <strong>Categories:</strong>
+    <br>
+    <td >  <ul class="list-group"> <ng-container> <li *ngFor="let cat of carc.categories" class="list-group-item"> <p> {{ cat.reference }} </p> </li> </ng-container>  </ul> </td>
+</div>
+</div>

@@ -1,0 +1,11 @@
+.imagesize{
+    height: 70px;
+    width: 70px;
+}
+
+.list-group{
+    max-height: 100px;
+    overflow:scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}

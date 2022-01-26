@@ -1,0 +1,117 @@
+<div class="container">
+    <h1>Modifier votre Composant : </h1>
+  
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()" >
+  
+        <div class="form-group">
+            <label >Id:</label>
+            <input 
+                formControlName="id"
+                type="number" 
+                [(ngModel)]="carc.id"
+                class="form-control" readonly>
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Id is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Name:</label>
+            <input 
+                formControlName="name"
+                type="text"
+                [(ngModel)]="carc.name" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].touched && f['name'].invalid">Name is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Type:</label>
+            <input 
+                formControlName="type"
+                type="text"
+                [(ngModel)]="carc.type" 
+                class="form-control">
+            <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
+                <div *ngIf="f['type'].touched && f['type'].invalid">Type is required.</div>
+            </div>
+        </div>
+         
+        
+        <div class="form-group">
+            <label >Image:</label>
+            <input 
+                formControlName="picture"
+                type="text"
+                [(ngModel)]="carc.picture" 
+                class="form-control">
+            <img src="{{f['picture'].value}}" alt="imagecomp" class="picturesize"> 
+            <div *ngIf="f['picture'].touched && f['picture'].invalid" class="alert alert-danger">
+                <div *ngIf="f['picture'].touched && f['picture'].invalid">Image is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Discount:</label>
+            <input 
+                formControlName="discount"
+                type="text"
+                [(ngModel)]="carc.discount" 
+                class="form-control">
+            <div *ngIf="f['discount'].touched && f['discount'].invalid" class="alert alert-danger">
+                <div *ngIf="f['discount'].touched && f['discount'].invalid">Discount is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Description:</label>
+            <input 
+                formControlName="description"
+                type="text"
+                [(ngModel)]="carc.description" 
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].touched && f['description'].invalid">Description is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Price:</label>
+            <input 
+                formControlName="price"
+                type="text"
+                [(ngModel)]="carc.price" 
+                class="form-control">
+            <div *ngIf="f['price'].touched && f['price'].invalid" class="alert alert-danger">
+                <div *ngIf="f['price'].touched && f['price'].invalid">Price is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label >Quantity:</label>
+            <input 
+                formControlName="quantity"
+                type="number"
+                [(ngModel)]="carc.quantity" 
+                class="form-control">
+            <div *ngIf="f['quantity'].touched && f['quantity'].invalid" class="alert alert-danger">
+                <div *ngIf="f['quantity'].touched && f['quantity'].invalid">Quantity is required.</div>
+            </div>
+        </div>
+        <input 
+        formControlName="categories"
+        type="hidden"
+        [(ngModel)]="carc.categories" 
+        class="form-control">
+        
+        <input 
+        formControlName="numberRate"
+        type="hidden"
+        [(ngModel)]="carc.numberRate" 
+        class="form-control">
+        <input 
+        formControlName="numberPersonRate"
+        type="hidden"
+        [(ngModel)]="carc.numberPersonRate" 
+        class="form-control">
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Modifier</button>
+    </form>
+</div>
