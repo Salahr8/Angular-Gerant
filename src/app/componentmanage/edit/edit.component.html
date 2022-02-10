@@ -96,12 +96,17 @@
                 <div *ngIf="f['quantity'].touched && f['quantity'].invalid">Quantity is required.</div>
             </div>
         </div>
-        <input 
-        formControlName="categories"
-        type="hidden"
-        [(ngModel)]="carc.categories" 
-        class="form-control">
-        
+        <div class="form-group">
+            <label >ComponentType:</label>
+            <input 
+                formControlName="Componentname"
+                type="text"
+                [(ngModel)]="carc.type" 
+                class="form-control">
+            <div *ngIf="f['quantity'].touched && f['quantity'].invalid" class="alert alert-danger">
+                <div *ngIf="f['quantity'].touched && f['quantity'].invalid">Quantity is required.</div>
+            </div>
+        </div>
         <input 
         formControlName="numberRate"
         type="hidden"

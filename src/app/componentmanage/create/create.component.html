@@ -16,11 +16,31 @@
             </div>
         </div>
         <div class="form-group">
+            <label >ComponentType:</label>
+            <select name="typecmp"formControlName="typec" type="text" class="form-control" >
+              <option selected>Choisir...</option>
+              <option *ngFor="let cm of Componentsdata"> {{cm.name}} </option>
+            </select>
+            <div *ngIf="f['typec'].touched && f['typec'].invalid" class="alert alert-danger">
+                <div *ngIf="f['typec'].value=='Choisir...'">Le type is required.</div>
+            </div>
+           </div>
+           <br>
+           <div class="form-group" *ngIf="f['typec'].value!='Choisir...'&&f['typec'].value!=''">
+            <select formControlName="soustype" type="text" class="form-control">
+              <option selected>Choisir...</option>
+              <ng-container *ngFor="let scm of SousComponentsdata">
+              <option *ngIf="this.f['typec'].value==scm.type"> {{scm.name}} </option>
+              </ng-container>
+            </select>
+           </div>
+
+        <div class="form-group">
             <label >Image:</label>
             <input 
                 formControlName="picture"
                 type="text"
-                class="form-control">
+                class="form-control" >
             <img src="{{f['picture'].value}}" alt="imagecomp" class="picturesize"> 
             <div *ngIf="f['picture'].touched && f['picture'].invalid" class="alert alert-danger">
                 <div *ngIf="f['picture'].touched && f['picture'].invalid">Image is required.</div>
@@ -36,22 +56,15 @@
                 <div *ngIf="f['name'].touched && f['name'].invalid">Name is required.</div>
             </div>
         </div>
-        <div class="form-group">
-            <label >Type:</label>
-            <input 
-                formControlName="type"
-                type="text" 
-                class="form-control">
-            <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
-                <div *ngIf="f['type'].touched && f['type'].invalid">Type is required.</div>
-            </div>
-        </div>
+       
         <div class="form-group">
             <label >Discount:</label>
-            <input 
-                formControlName="discount"
-                type="number"
-                class="form-control">
+             <select formControlName="discount"
+             type="number"
+             class="form-control">
+             <option [value]="1">Yes</option>
+             <option [value]="0">No</option>
+            </select>
             <div *ngIf="f['discount'].touched && f['discount'].invalid" class="alert alert-danger">
                 <div *ngIf="f['discount'].touched && f['discount'].invalid">Discount is required.</div>
             </div>
@@ -86,13 +99,18 @@
                 <div *ngIf="f['quantity'].touched && f['quantity'].invalid">Quantity is required.</div>
             </div>
         </div>
-        <div class="form-group">
+         <div class="form-group">
             <label >Categories:</label>
         
             <select  class="form-control"  multiple data-live-search="true">
-                 <option *ngFor="let cat of categories" (click)="puton(cat.reference)" >{{cat.reference}}</option> 
+                 <option *ngFor="let cat of categories" (click)="puton(cat.marque)" >{{cat.marque}}</option> 
             </select>
         </div>
+
+            <input 
+                formControlName="type"
+                type="hidden" 
+                class="form-control"  [value]="f['Componentname'].value"  readonly>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Ajouter</button>
     </form>
 </div>
