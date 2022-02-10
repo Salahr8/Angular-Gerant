@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Categorie } from '../categorie';
-import { ComponentCar } from '../componentCar.model';
 import { ComponentmanageService } from '../componentmanage.service';
 
 @Component({
