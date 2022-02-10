@@ -16,7 +16,21 @@ export class EditComponent implements OnInit {
               private route:ActivatedRoute,
               private router: Router) { }
   id!: number;
-  carc!: ComponentCar;
+
+  carc: ComponentCar={
+    id:0,
+    name:"",
+    description:"",
+    price:0,
+    type:"",
+    picture:"",
+    discount:0,
+    quantity:0,
+    numberPersonRate:0,
+    numberRate:0,
+    Componentname:"",
+    categories:[]
+  }; 
   form!: FormGroup;
 
   ngOnInit(): void {
@@ -32,11 +46,11 @@ export class EditComponent implements OnInit {
       picture: new FormControl('',Validators.required),
       description: new FormControl('',Validators.required),
       price: new FormControl('',Validators.required),
-      categories: new FormControl(''),
       numberPersonRate: new FormControl(''),
       discount: new FormControl('',Validators.required),
       numberRate:new FormControl(''),
-      quantity: new FormControl('')
+      quantity: new FormControl(''),
+      Componentname: new FormControl('')
     })
   }
   get f(){
@@ -48,4 +62,5 @@ export class EditComponent implements OnInit {
          this.router.navigateByUrl('componentmanage/index');
     })
   }
+
 }

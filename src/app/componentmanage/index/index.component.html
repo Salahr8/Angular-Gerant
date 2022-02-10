@@ -13,7 +13,7 @@
           <option *ngFor="let cm of Componentsdata"> {{cm.name}} </option>
         </select>
         <div *ngIf="f['type'].touched && f['type'].invalid" class="alert alert-danger">
-            <div *ngIf="f['type'].value=='Choisir...'">Le type is required.</div>
+            <div *ngIf="f['type'].touched && f['type'].value=='Choisir...'">Le type is required.</div>
         </div>
        </div>
        <br>
@@ -21,7 +21,7 @@
         <select formControlName="soustype" type="text" class="form-control">
           <option selected>Choisir...</option>
           <ng-container *ngFor="let scm of SousComponentsdata">
-          <option *ngIf="this.f['type'].value==scm.type" > {{scm.name}} </option>
+          <option *ngIf="this.f['type'].value==scm.type"> {{scm.name}} </option>
           </ng-container>
         </select>
        </div>
@@ -29,7 +29,7 @@
        <button class="btn btn-primary" type="submit" [disabled]="!form.valid||f['type'].value=='Choisir...'">Rechercher</button>
     </form>
     <br>
-    <a href="#" routerLink="/componentmanage/index" class="btn btn-info" (click)="infocat=false">Retour </a>
+    <a href="#" routerLink="/componentmanage/index" class="btn btn-info" (click)="ngOnInit()">Retour </a>
   </div>
    <ng-container *ngIf="!infocat&&f['type'].value!=''&&f['type'].value!='Choisir...' "> {{ initialiser() }}  </ng-container> 
 <!--   <ng-container *ngIf="typecmp=='Choisir...'"> {{ initialiser() }}</ng-container> -->
@@ -49,7 +49,7 @@
         <th>categorie </th>
         <th width="220px">Action</th>
       </tr>
-      <tr *ngFor="let cm of components | paginate: { itemsPerPage: 10, currentPage: p, totalItems:totalLength }">
+      <tr *ngFor="let cm of componentsf | paginate: { itemsPerPage: 10, currentPage: p, totalItems:totalLength }">
         <td>{{ cm.id }}</td>
         <td>{{ cm.name }}</td>
         <td>{{ cm.description }}</td>
@@ -60,7 +60,7 @@
         <td align="center">{{ cm.quantity }}</td>
         <td align="center">{{ cm.numberPersonRate }}</td>
         <td align="center">{{ cm.numberRate }}</td>
-        <td >  <ul class="list-group"> <ng-container> <li *ngFor="let cat of cm.categories" class="list-group-item"> {{ cat.reference }} </li> </ng-container>  </ul> </td>
+        <td >  <ul class="list-group"> <ng-container  *ngFor="let cat of cm.categories"> <li  class="list-group-item">{{  cat.marque }}  </li> </ng-container>  </ul> </td>
 
         <td>
           <a href="#" [routerLink]="['/componentmanage/', cm.id, 'view']" class="btn btn-info">View</a>

@@ -11,5 +11,6 @@ export interface ComponentCar{
     quantity:number;
     numberPersonRate:number;
     numberRate:number;
+    Componentname:string;
     categories:Categorie[];
 }

@@ -407,6 +407,32 @@
       "discount": 0,
       "numberRate": 0,
       "quantity": 90
+    },
+    {
+      "id": 5000,
+      "name": "moteurnew",
+      "type": "Moteur",
+      "picture": "https://www.larousse.fr/encyclopedie/data/images/1001620-Coupe_dun_moteur_%c3%a0_explosion.jpg",
+      "description": "descrption",
+      "price": "800",
+      "categories": [
+        {
+          "id": 1,
+          "reference": "skooda"
+        },
+        {
+          "id": 2,
+          "reference": "audi"
+        },
+        {
+          "id": 3,
+          "reference": "BMW"
+        }
+      ],
+      "numberPersonRate": 0,
+      "discount": 1,
+      "numberRate": 0,
+      "quantity": 70
     }
   ]
 }
