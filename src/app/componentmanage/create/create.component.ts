@@ -17,7 +17,14 @@ export class CreateComponent implements OnInit {
   idn!: number;
   categorieselected:String[]=[];
   constructor(public Service: ComponentmanageService,
-              private router:Router) { }
+              private router:Router) {
+  
+               this.Service.getCategories().subscribe((data: any)=>{
+                this.categories=data._embedded.categories;
+                console.log("categories",this.categories);
+              });
+
+               }
 
   ngOnInit(): void {
     this.form= new FormGroup({
@@ -81,18 +88,6 @@ export class CreateComponent implements OnInit {
 
   
   categories:Categorie[]=[
-    {
-      id: 1,
-      marque: "BMW"       
-    },
-    {
-      id: 2,
-      marque: "Mercedes"       
-    },
-    {
-      id: 3,
-      marque: "Toyota"       
-    }
   ]
   
   get f(){
@@ -114,7 +109,7 @@ export class CreateComponent implements OnInit {
       this.f['type'].setValue(this.stype);
       this.f['Componentname'].setValue(this.stype);
       
-    console.log(this.categorieselected);
+    console.log("selected",this.categorieselected);
     this.getcat().setValue(this.categorieselected);
     this.Service.create(this.form.value).subscribe((res:any) => {
     this.router.navigateByUrl('componentmanage/index');
