@@ -10,9 +10,7 @@ import { ViewComponent } from './view/view.component';
 
 @NgModule({
   declarations: [
-    IndexComponent,
-    EditComponent,
-    ViewComponent
+
   ],
   imports: [
     CommonModule,

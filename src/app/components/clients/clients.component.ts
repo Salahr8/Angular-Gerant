@@ -14,8 +14,8 @@ export class ClientsComponent implements OnInit {
   ngOnInit(): void {
   }
   onGetAllClients(){
-    this.clientsService.getAllClients().subscribe(data => {
-      this.clients=data;
+    this.clientsService.getAllClients().subscribe((data:any) => {
+      this.clients=data._embedded.clients;
     })
   }
   onSearch(value: any){

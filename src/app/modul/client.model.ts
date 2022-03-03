@@ -5,4 +5,6 @@ export interface Client {
     mail:string;
     city:string;
     adress:string;
+    enabled: boolean;
+    verification_code: string;
 }

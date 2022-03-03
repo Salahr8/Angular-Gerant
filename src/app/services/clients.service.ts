@@ -10,9 +10,9 @@ export class ClientsService {
 
     }
 
-    getAllClients():Observable<Client[]>{
+    getAllClients():Observable<any[]>{
         let host = environment.host;
-        return this.http.get<Client[]>(host+"/clients")
+        return this.http.get<any[]>(host+"/clients");
     }
 
     searchClients(key:string):Observable<Client[]>{ 
