@@ -14,7 +14,9 @@ import { CreateComponent } from './componentmanage/create/create.component';
 import { EditComponent } from './componentmanage/edit/edit.component';
 import { ViewComponent } from './componentmanage/view/view.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { StatistiqueComponent } from './component/statistique/statistique.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     IndexComponent,
     CreateComponent,
     EditComponent,
-    ViewComponent
+    ViewComponent,
+    StatistiqueComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

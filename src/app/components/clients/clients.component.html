@@ -22,12 +22,15 @@
     <table class="table">
         <tr>
             
-            <td>ID</td><td>first name</td><td>last name</td><td>mail</td><td>city</td><td>adress</td>
+            <td>ID</td><td>first name</td><td>last name</td><td>mail</td><td>city</td><td>adress</td><td>activer/désactiver</td>
         </tr>
         <tr *ngFor="let c of clients">
             <td>{{c.id}}</td><td>{{c.f_name}}</td><td>{{c.l_name}}</td><td>{{c.mail}}</td><td>{{c.city}}</td><td>{{c.adress}}</td>
-            <td>
-                <button (click)="onDelet(c)"  class="btn btn-sm btn-danger"><span>delete</span></button>
+            <td *ngIf="c.enabled">
+                <button (click)="onDelet(c)"  class="btn btn-sm btn-outline-info ml-2"><span>active</span></button>
+            </td>
+            <td *ngIf="!c.enabled">
+                <button (click)="onDelet(c)"  class="btn btn-sm btn-danger"><span>déactiver</span></button>
             </td>
         </tr>
     </table>

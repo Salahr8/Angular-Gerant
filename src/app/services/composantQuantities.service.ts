@@ -9,7 +9,7 @@ export class ComposantQuantityService{
     constructor(private http : HttpClient){
     }
     getAllComposantQuantity():Observable<ComposantQuantity[]>{
-        let host = environment.host;
+        let host = environment.host2;
         return this.http.get<ComposantQuantity[]>(host+"/ComposantQuantities")
     }
 }

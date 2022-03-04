@@ -1,4 +1,4 @@
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders,HttpErrorResponse} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -23,6 +23,12 @@ export class ComponentmanageService {
     return this.http.get<ComponentCar[]>(host+"/composants");
   }
 
+  getCategories():Observable<Categorie[]>{
+    let host = environment.host;
+    
+    return this.http.get<Categorie[]>(host+"/categories");
+  }
+
      find(id:number): Observable<ComponentCar>{
       let host = environment.host;
       return this.http.get<ComponentCar>(host+"/composants/"+id)
@@ -37,6 +43,7 @@ export class ComponentmanageService {
       let host = environment.host;
       return this.http.get(host+"/composants/"+id+"/categories")
   }
+  
 
      update(id:number, cm: ComponentCar): Observable<any> {
         let host = environment.host;

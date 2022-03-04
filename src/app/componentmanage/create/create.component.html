@@ -106,11 +106,6 @@
                  <option *ngFor="let cat of categories" (click)="puton(cat.marque)" >{{cat.marque}}</option> 
             </select>
         </div>
-
-            <input 
-                formControlName="type"
-                type="hidden" 
-                class="form-control"  [value]="f['Componentname'].value"  readonly>
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Ajouter</button>
     </form>
 </div>

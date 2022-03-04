@@ -25,4 +25,9 @@ export class ClientsService {
         let host = environment.host;
         return this.http.delete<void>(host+"/clients/"+client.id);
     }
+    active(client:Client):Observable<void>{ 
+        let host = environment.host;
+        let id = {id: client.id}
+        return this.http.post<void>(host+"/client/active", id);
+    }
 }

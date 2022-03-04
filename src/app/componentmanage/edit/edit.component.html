@@ -54,11 +54,12 @@
         </div>
         <div class="form-group">
             <label >Discount:</label>
-            <input 
-                formControlName="discount"
-                type="text"
-                [(ngModel)]="carc.discount" 
-                class="form-control">
+            <select formControlName="discount"
+            type="number"
+            class="form-control">
+            <option [value]="1" >Yes</option>
+            <option [value]="0" >No</option>
+           </select>
             <div *ngIf="f['discount'].touched && f['discount'].invalid" class="alert alert-danger">
                 <div *ngIf="f['discount'].touched && f['discount'].invalid">Discount is required.</div>
             </div>

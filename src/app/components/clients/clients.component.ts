@@ -26,7 +26,7 @@ export class ClientsComponent implements OnInit {
   onDelet(c: Client){
     let test = confirm("tu es sure ?");
     if(test){
-      this.clientsService.delete(c).subscribe(
+      this.clientsService.active(c).subscribe(
         data => {
           this.onGetAllClients();
         }
